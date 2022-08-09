@@ -1,18 +1,23 @@
-import {Routes, Route, Link} from 'react-router-dom'
+import { Routes, Route } from "react-router-dom";
 
+import { Aboutpage } from "./pages/Aboutpage";
+import { Blogpage } from "./pages/Blogpage";
+import { Homepage } from "./pages/Homepage";
+import { Notfoundpage } from "./pages/Notfoundpage";
 
+import { Layout } from "./componets/Layout";
 
 function App() {
   return (
     <>
-      <header>
-        <a href="/">Home</a>
-        <a href="/posts">Blog</a>
-        <a href="/about">About</a>
-      </header>
-      <dir>
-        <h1>Пагнали нах</h1>
-      </dir>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Homepage />} />
+          <Route path="about" element={<Aboutpage />} />
+          <Route path="posts" element={<Blogpage />} />
+          <Route path="*" element={<Notfoundpage />} />
+        </Route>
+      </Routes>
     </>
   );
 }
