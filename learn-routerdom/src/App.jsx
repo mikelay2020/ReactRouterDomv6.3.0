@@ -5,15 +5,15 @@ import { Blogpage } from "./pages/Blogpage";
 import { Homepage } from "./pages/Homepage";
 import { Notfoundpage } from "./pages/Notfoundpage";
 
-import { Layout } from "./componets/Layout";
+import { Layout } from "./componets/Layout";   {/*Layout перевод макет  */}
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Homepage />} />
-          <Route path="about" element={<Aboutpage />} />
+        <Route path="/" element={<Layout />}> {/* общая обертка. она будет отрисовываться всегда */}
+          <Route index element={<Homepage />} /> {/*вместо path="/" указываем index, чтобы путь не повторялся */}
+          <Route path="about" element={<Aboutpage />} />   {/* уберает / (слеш) из пути, т.к есть родительский путь Route path="/"  */}
           <Route path="posts" element={<Blogpage />} />
           <Route path="*" element={<Notfoundpage />} />
         </Route>
@@ -23,3 +23,7 @@ function App() {
 }
 
 export default App;
+
+
+
+ {/*  */}

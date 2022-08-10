@@ -42,11 +42,11 @@
     margin: 0 auto;
   }
   
-  /* main {
-    min-height: calc(100vh - 85px - 22px);
+  main {
+    min-height: calc(100vh - 95px - 25px);
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-  } */
+  }
   
   main a {
     text-decoration: none;
@@ -56,7 +56,7 @@
     text-decoration: underline;
   }
   
-  .active{
+  .active-link{
     color: var(--color-active);
     cursor: default;
   }
