@@ -8,15 +8,15 @@ const Layout = () => {
     <>
       <header>
         <CustomLink to="/" >Home</CustomLink>
-        <CustomLink to="/signin" >SignIn</CustomLink>
-        <CustomLink to="/signup" >SignUp</CustomLink>
+        <CustomLink to="/info" >Info</CustomLink>
+        <CustomLink to="/about" >About</CustomLink>
       </header>
 
       <main>
                <Outlet />  {/* суть Outlet куда разместить все остальное */}
       </main>
 
-      <footer>Сайт создан стараданиями Мишаньки</footer>
+      <footer>Developed by mikelay 2022</footer>
     </>
   );
 };
