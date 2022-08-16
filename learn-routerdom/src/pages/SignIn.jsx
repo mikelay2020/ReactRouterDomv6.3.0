@@ -12,7 +12,7 @@ const SignIn = () =>{
     const location = useLocation();
     const {signin} = useAuth();
 
-    const fromPage = location.state?.from?.pathname || '/signin/new';
+    const fromPage = location.state?.from?.pathname || '/';
     
     
     const { loading, request, error, clearError } = useHttp()
@@ -26,14 +26,14 @@ const SignIn = () =>{
     const loginHandler = async () => {
         try {
            const data = await request('/api/v1/signin', 'POST', { ...form })
+
            signin(data.LoginName, () => navigate(fromPage, {replace: true}))
-console.log(fromPage)
+
         } catch (e) { }
     }
 
     return(
         <div>
-             <Link to="/signin/new" style={{margin: '1rem 0', display: 'inline-block'}}>Add new post</Link>
            <div className="row">
             <div className="col s6 offset-s3">
 
