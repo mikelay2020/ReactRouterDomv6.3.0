@@ -4,8 +4,9 @@ const Homepage = () =>{
     return(
         <div>
             <h1>Home page</h1>
-            <Link to="/signin" style={{margin: '1rem 1rem', display: 'inline-block'}}>Sign In</Link>
-            <Link to="/signup" style={{margin: '1rem 1rem', display: 'inline-block'}}>Sign Up</Link>
+           
+<Link to="/begin/new" style={{margin: '1rem 1rem', display: 'inline-block'}}>Start work</Link> 
+
 
         </div>
     )

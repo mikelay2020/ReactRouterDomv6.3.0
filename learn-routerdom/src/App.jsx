@@ -8,7 +8,9 @@ import { InfoPage } from "./pages/InfoPage";
 import { AboutPage } from "./pages/AboutPage";
 import { Createpost} from './pages/Createpost'
 import { Notfoundpage } from "./pages/Notfoundpage";
-import { Layout } from "./componets/Layout";   {/*Layout перевод макет  */}
+import { Layout } from "./componets/Layout";
+import {BeginPage} from "./pages/BeginPage";
+   {/*Layout перевод макет  */}
 
 
 
@@ -21,11 +23,11 @@ function App() {
         <Route path="/" element={<Layout />}> {/* общая обертка. она будет отрисовываться всегда */}
           <Route index element={<Homepage />} /> {/*вместо path="/" указываем index, чтобы путь не повторялся */}
           <Route path="info" element={<InfoPage />} />
-          <Route path="about" element={<SignIn />} />
-          
+          <Route path="about" element={<AboutPage />} />
+          <Route path="begin" element={<BeginPage />} />
           <Route path="signup" element={<SignUP />} />   {/* уберает / (слеш) из пути, т.к есть родительский путь Route path="/"  */}
           <Route path="signin" element={<SignIn />} />
-          <Route path="signin/new" element={
+          <Route path="begin/new" element={
             <RequireAuth>
               <Createpost />
             </RequireAuth>

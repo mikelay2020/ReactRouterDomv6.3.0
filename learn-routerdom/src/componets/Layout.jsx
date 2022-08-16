@@ -16,7 +16,7 @@ const Layout = () => {
                <Outlet />  {/* суть Outlet куда разместить все остальное */}
       </main>
 
-      <footer>Сайт создан стараданиями Мишаньки</footer>
+      <footer>Developed by mikelay 2022</footer>
     </>
   );
 };
