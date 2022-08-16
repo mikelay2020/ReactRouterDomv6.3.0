@@ -8,8 +8,8 @@ const Layout = () => {
     <>
       <header>
         <CustomLink to="/" >Home</CustomLink>
-        <CustomLink to="/posts" >Blog</CustomLink>
-        <CustomLink to="/about" >About</CustomLink>
+        <CustomLink to="/signin" >SignIn</CustomLink>
+        <CustomLink to="/signup" >SignUp</CustomLink>
       </header>
 
       <main>
