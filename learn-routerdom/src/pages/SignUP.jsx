@@ -39,7 +39,7 @@ const SignUp = () => {
               <span className="card-title">Регистрация</span>
               <div className="input-field">
                 <input
-                  placeholder="Введите Логин"
+                  placeholder="Enter your Login name"
                   type="text"
                   name="LoginName"
                   onChange={changeHandler1}
@@ -48,7 +48,7 @@ const SignUp = () => {
               </div>
               <div className="input-field">
                 <input
-                  placeholder="Введите пароль"
+                  placeholder="Enter your Password"
                   type="Password"
                   name="Password"
                   onChange={changeHandler1}
@@ -58,7 +58,7 @@ const SignUp = () => {
               <div>
                 <div className="input-field">
                   <input
-                    placeholder="Введите TypeID"
+                    placeholder="Enter your TypeID"
                     type="text"
                     name="TypeId"
                     onChange={changeHandler1}
@@ -67,7 +67,7 @@ const SignUp = () => {
                 </div>
                 <div className="input-field">
                   <input
-                    placeholder="Введите имя"
+                    placeholder="Enter your First name"
                     type="text"
                     name="InfoName"
                     onChange={changeHandler1}
@@ -76,7 +76,7 @@ const SignUp = () => {
                 </div>
                 <div className="input-field">
                   <input
-                    placeholder="Введите Email"
+                    placeholder="Enter your Email"
                     type="text"
                     name="InfoEmail"
                     onChange={changeHandler1}
@@ -85,7 +85,7 @@ const SignUp = () => {
                 </div>
                 <div className="input-field">
                   <input
-                    placeholder="Введите Фамилию"
+                    placeholder="Enter your Last name"
                     type="text"
                     name="InfoSurname"
                     onChange={changeHandler1}
@@ -96,7 +96,7 @@ const SignUp = () => {
             </div>
             <div className="card-action">
               <button className="btn gray darken-1" onClick={registerHandler}>
-                Зарегистрироваться
+                Sign Up
               </button>
             </div>
           </div>

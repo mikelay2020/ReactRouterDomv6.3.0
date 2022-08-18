@@ -35,8 +35,7 @@ const SignIn = () => {
               <div>
                 <div className="input-field">
                   <input
-                    placeholder="Введите Email"
-                    id="LoginName"
+                    placeholder="Enter your Login name"
                     type="text"
                     name="LoginName"
                     onChange={changeHandler}
@@ -45,8 +44,7 @@ const SignIn = () => {
                 </div>
                 <div className="input-field">
                   <input
-                    placeholder="Введите пароль"
-                    id="Password"
+                    placeholder="Enter your password"
                     type="Password"
                     name="Password"
                     onChange={changeHandler}
@@ -57,7 +55,7 @@ const SignIn = () => {
             </div>
             <div className="card-action">
               <button className="btn gray darken-1" onClick={loginHandler}>
-                Войти
+                Sign In
               </button>
             </div>
           </div>
