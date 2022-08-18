@@ -1,31 +1,35 @@
-import { useState } from "react"
-import { useHttp } from '../hook/http.hook'
-import 'materialize-css'
+import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../hook/useAuth";
+import { useHttp } from "../hook/http.hook";
+import "materialize-css";
 
-const SignUp = () =>{
+const SignUp = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { signin } = useAuth();
+  const fromPage = location.state?.from?.pathname || "/";
   const { request } = useHttp();
   const [form, setForm] = useState();
   const changeHandler1 = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
   };
-
   const registerHandler = async () => {
-      const form2 = {
-    LoginName: form.LoginName,
-    Password: form.Password,
-    TypeId: form.TypeId,
-    Info: {
-      Name: form.InfoName,
-      Email: form.InfoEmail,
-      Surname: form.InfoSurname,
-    }
-  };
+    const form2 = {
+      LoginName: form.LoginName,
+      Password: form.Password,
+      TypeId: form.TypeId,
+      Info: {
+        Name: form.InfoName,
+        Email: form.InfoEmail,
+        Surname: form.InfoSurname,
+      },
+    };
     try {
       const data = await request("/api/v1/user", "POST", { ...form2 });
-
+      signin('data.LoginName', () => navigate(fromPage, { replace: true }));
     } catch (e) {}
   };
-
   return (
     <div>
       <div className="row">
@@ -36,7 +40,6 @@ const SignUp = () =>{
               <div className="input-field">
                 <input
                   placeholder="Введите Логин"
-                  //  id="LoginName"
                   type="text"
                   name="LoginName"
                   onChange={changeHandler1}
@@ -46,7 +49,6 @@ const SignUp = () =>{
               <div className="input-field">
                 <input
                   placeholder="Введите пароль"
-                  //  id="Password"
                   type="Password"
                   name="Password"
                   onChange={changeHandler1}
@@ -57,7 +59,6 @@ const SignUp = () =>{
                 <div className="input-field">
                   <input
                     placeholder="Введите TypeID"
-                    //  id="TypeId"
                     type="text"
                     name="TypeId"
                     onChange={changeHandler1}
@@ -67,7 +68,6 @@ const SignUp = () =>{
                 <div className="input-field">
                   <input
                     placeholder="Введите имя"
-                    //    id="Name"
                     type="text"
                     name="InfoName"
                     onChange={changeHandler1}
@@ -77,7 +77,6 @@ const SignUp = () =>{
                 <div className="input-field">
                   <input
                     placeholder="Введите Email"
-                    //   id="email"
                     type="text"
                     name="InfoEmail"
                     onChange={changeHandler1}
@@ -87,7 +86,6 @@ const SignUp = () =>{
                 <div className="input-field">
                   <input
                     placeholder="Введите Фамилию"
-                    //  id="Info.Surname"
                     type="text"
                     name="InfoSurname"
                     onChange={changeHandler1}
@@ -106,6 +104,6 @@ const SignUp = () =>{
       </div>
     </div>
   );
-}
+};
 
-export {SignUp}
+export { SignUp };
