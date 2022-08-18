@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from './hoc/AuthProvider'
 import { RequireAuth} from './hoc/RequireAuth'
-import { SignUP } from "./pages/SignUP";
+import { SignUp } from "./pages/SignUp";
 import { SignIn } from "./pages/SignIn";
 import { Homepage } from "./pages/Homepage";
 import { InfoPage } from "./pages/InfoPage";
@@ -25,9 +25,9 @@ function App() {
           <Route path="info" element={<InfoPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="begin" element={<BeginPage />} />
-          <Route path="signup" element={<SignUP />} />   {/* уберает / (слеш) из пути, т.к есть родительский путь Route path="/"  */}
+          <Route path="signup" element={<SignUp />} />   {/* уберает / (слеш) из пути, т.к есть родительский путь Route path="/"  */}
           <Route path="signin" element={<SignIn />} />
-          <Route path="begin/new" element={
+          <Route path="begin/authUser" element={
             <RequireAuth>
               <Createpost />
             </RequireAuth>

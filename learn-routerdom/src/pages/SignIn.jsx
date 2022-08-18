@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useHttp } from '../hook/http.hook'
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hook/useAuth'
 
 import 'materialize-css'
@@ -15,7 +15,7 @@ const SignIn = () =>{
     const fromPage = location.state?.from?.pathname || '/';
     
     
-    const { loading, request, error, clearError } = useHttp()
+    const { request } = useHttp()
     const [form, setForm] = useState({
         LoginName: '', Password: ''
     })

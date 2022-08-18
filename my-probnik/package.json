@@ -23,6 +23,7 @@
       "react-app/jest"
     ]
   },
+  "proxy": "http://new.pusha.nl:8080",
   "browserslist": {
     "production": [
       ">0.2%",

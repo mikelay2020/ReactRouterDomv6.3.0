@@ -1,16 +1,13 @@
-import { useState } from "react"
-import { useHttp } from '../hook/http.hook'
-import 'materialize-css'
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { useHttp } from "../hooks/http.hook";
 
-const SignUp = () =>{
-  const { request } = useHttp();
+export const CreateUser = () => {
+  const auth = useContext(AuthContext);
+  const { loading, request, error, clearError } = useHttp();
   const [form, setForm] = useState();
-  const changeHandler1 = (event) => {
-    setForm({ ...form, [event.target.name]: event.target.value });
-  };
 
-  const registerHandler = async () => {
-      const form2 = {
+  const form2 = {
     LoginName: form.LoginName,
     Password: form.Password,
     TypeId: form.TypeId,
@@ -18,11 +15,17 @@ const SignUp = () =>{
       Name: form.InfoName,
       Email: form.InfoEmail,
       Surname: form.InfoSurname,
-    }
+    },
   };
+  console.log(form2)
+
+  const changeHandler1 = (event) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
+  };
+
+  const registerHandler = async () => {
     try {
       const data = await request("/api/v1/user", "POST", { ...form2 });
-
     } catch (e) {}
   };
 
@@ -106,6 +109,4 @@ const SignUp = () =>{
       </div>
     </div>
   );
-}
-
-export {SignUp}
+};
